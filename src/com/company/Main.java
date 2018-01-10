@@ -2,10 +2,11 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -26,6 +27,7 @@ public class Main {
         }
         SwingUtilities.invokeLater(() -> jLabel.setText("hey! this is a different！"));
 
-
+        BlockingDeque<String> blockingDeque=new LinkedBlockingDeque<String>();
+        blockingDeque.add(String.valueOf(args));
     }
 }
